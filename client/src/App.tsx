@@ -1,15 +1,14 @@
-import { useEffect } from "react"
-import peerConnection from "./modules/webrtc"
+import peerConnection from "./modules/webrtc";
 import useSocket from "./modules/socket/useSocket";
+import LocalVideoStream from "./modules/video";
 
 function App() {
   useSocket();
-  useEffect(() => {
-    peerConnection.createOffer();
-  }, [])
+
   return (
     <>
-      <div>Omegle</div>
+      <h2>Omegle</h2>
+      <LocalVideoStream />
     </>
   )
 }

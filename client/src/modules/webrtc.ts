@@ -7,7 +7,6 @@ class Webrtc {
 		this.peer.onicecandidate = e => {
 			console.log("New Ice Candidate! reprinting SPD " + JSON.stringify(this.peer.localDescription));
 		}
-		const dc = this.peer.createDataChannel('channel')
 	}
 
 	async createOffer() {
