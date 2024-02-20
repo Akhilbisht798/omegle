@@ -10,7 +10,6 @@ const LocalVideoStream = () => {
   async function makeCall() {
     try {
       socket.emit('make-call', socket.id)
-      console.log("socket.id, ", socket.id)
     } catch (err) {
       console.log(err)
     }
@@ -25,7 +24,6 @@ const LocalVideoStream = () => {
       localStream.getTracks().forEach(track => {
         peerConnection.peer.addTrack(track, localStream);
       })
-      peerConnection.createOffer()
     }
     initMediaStream()
   }, [])

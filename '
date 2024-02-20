@@ -50,7 +50,8 @@ io.on('connection', (socket) => {
 		socket.to(data.room).emit("on-offer", data)
 	})
 	socket.on('send-anser', (data) => {
-		socket.to(data.room).emit("on-answer", data)
+		socket.to(data.room).emit("answer", data)
+		console.log(data)
 	})
 	// socket.off remove socket.id from queue.
 });
